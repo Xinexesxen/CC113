@@ -1,0 +1,51 @@
+/*Create a simple login program where the user inputs ID # and PIN and if the credentials
+are correct, the program will print:
+
+You have Successfully Logged In
+
+ID#:ID# */
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int info[3][2] ={  // <--- Accounts 2D Declaration
+        {9191, 1919},
+        {9292, 2929},
+        {9393, 3939}
+    };
+
+    // Input Variables
+    int ID, PIN, IDchecker, PINchecker;
+
+        printf("\n  Enter ID Number: "); // <--- Asks the user to input ID Number
+        IDchecker = scanf("%d", &ID);
+
+
+
+        printf("\n  Enter PIN: "); // <--- Asks the user to input PIN
+        PINchecker = scanf("%d", &PIN);
+
+        //Checks the credentials
+    if( IDchecker && PINchecker && //Only Valid Credentials
+        ID == info [0][0] && PIN == info [0][1] || //Will not print if one credential is invalid.
+        ID == info [1][0] && PIN == info [1][1] || //Will not print if one credential is invalid.
+        ID == info [2][0] && PIN == info [2][1]){  //Will not print if one credential is invalid.
+
+
+        //Will print if User Input is Valid
+        printf("\n  You have Successfully Logged In!  \n");
+        printf("\n  ID # : %d \n", ID);
+        return 0;
+
+
+    }else{
+
+        //Will print if User Input is Invalid
+        printf("\n Invalid ID!/PIN  \n");
+        return 0;
+    }
+}
